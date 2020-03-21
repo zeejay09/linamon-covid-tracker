@@ -44,7 +44,9 @@ export default class Insert extends Component {
             email: this.state.email,
         }
 
-        axios.post('http://localhost/linamon-covid-tracker-api/insert.php', obj).then(res => console.log(res.data));
+        axios.post('http://localhost/linamon-covid-tracker-api/insert.php', obj).then(
+            res => console.log(res.data)
+        );
 
         this.setState({
             first_name: '',

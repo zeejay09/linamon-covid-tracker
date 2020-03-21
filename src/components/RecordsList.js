@@ -1,7 +1,36 @@
 import React, { Component } from "react";
+import axios from 'axios';
+import { Redirect } from 'react-router';
+import { Link } from 'react-router-dom';
 
 class RecordsList extends Component {
+
+    constructor(props) {
+        super(props);
+        this.delete = this.delete.bind(this);
+        this.state = {
+            redirect: false
+        }
+    }
+
+    delete = () => {
+        axios.get('http://localhost/linamon-covid-tracker-api/delete.php?id=' + this.props.obj.user_id).then(
+            console.log('Deleted'),
+            this.setState({
+                redirect: true
+            })
+        ).catch(
+            err => console.log(err)
+        )
+    }
+
     render() {
+        const { redirect } = this.state;
+
+        if (redirect) {
+            return <Redirect to='/view' />;
+        }
+
         return (
             <tr>
                 <td>
@@ -14,10 +43,10 @@ class RecordsList extends Component {
                     { this.props.obj.email }
                 </td>
                 <td>
-                    <button className="btn btn-primary">Edit</button>
+                    <Link to={ "/edit/" + this.props.obj.user_id } className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
-                    <button className="btn btn-danger">Delete</button>
+                    <button onClick={ this.delete } className="btn btn-danger">Delete</button>
                 </td>
             </tr>
         )
