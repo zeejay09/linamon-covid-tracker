@@ -1,41 +1,34 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Link } from 'react-router-dom';
+import { Navbar } from 'react-bootstrap';
 
-import Insert from './components/Insert';
-import Edit from './components/Edit';
-import View from './components/View';
-
+// My imports
+import Routes from "./Routes";
 import './App.css';
 
 function App() {
   return (
     <Router>
-      <div className="container">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <Link to={'/'} className="navbar-brand">Linamon COVID-19 Tracker</Link>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav mr-auto">
+      <div className="container-fluid">
+
+        <Navbar bg="light" expand="lg">
+          <Link to={'/'} className="navbar-brand">Municipality of Linamon</Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
+            <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to={'/'} className="nav-link">Home</Link>
+                <Link to={'/about'} className="nav-link">About</Link>
               </li>
               <li className="nav-item">
-                <Link to={'/insert'} className="nav-link">Insert</Link>
-              </li>
-              <li className="nav-item">
-                <Link to={'/view'} className="nav-link">View</Link>
+                <Link to={'/insert'} className="nav-link">Contact</Link>
               </li>
             </ul>
-          </div>
-        </nav>
+          </Navbar.Collapse>
+        </Navbar>
+        
+        <Routes />
 
-        <h2>Welcome to COVID-19 Tracker</h2>
-
-        <Switch>
-          <Route exact path='/insert' component={ Insert } />
-          <Route path='/edit/:id' component={ Edit } />
-          <Route path='/view' component={ View } />
-        </Switch>
       </div>
     </Router>
   );

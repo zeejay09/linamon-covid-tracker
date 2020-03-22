@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+/* Navbar Design */
+.container-fluid {
+  padding-right: 0px !important;
+  padding-left: 0px !important;
+}
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(0,0,0,.7);
+}
+
+a.nav-link {
+  text-align: center;
+}
