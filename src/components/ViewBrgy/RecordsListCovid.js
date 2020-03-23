@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
-class RecordsList extends Component {
+class RecordsListCovid extends Component {
 
     constructor(props) {
         super(props);
@@ -14,7 +14,17 @@ class RecordsList extends Component {
     }
 
     delete = () => {
-        axios.get('http://localhost/linamon-covid-tracker-api/delete.php?id=' + this.props.obj.user_id).then(
+
+        const authToken = sessionStorage.getItem('authToken');
+
+        let data = {
+            covid_case_id: [
+                this.props.obj.id
+            ]
+        }
+
+        console.log(data);
+        axios.delete('/delete/covid-cases', {data,headers:{Authorization: authToken}}).then(
             console.log('Deleted'),
             this.setState({
                 redirect: true
@@ -28,7 +38,7 @@ class RecordsList extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/view' />;
+            return <Redirect to={{ pathname: "/view/brgy/" + localStorage.getItem('brgy_id') }} />;
         }
 
         return (
@@ -46,7 +56,7 @@ class RecordsList extends Component {
                     { this.props.obj.alias }
                 </td>
                 <td>
-                    <Link to={ "/edit/" + this.props.obj.id } className="btn btn-primary mr-3">Edit</Link>
+                    <Link to={ "/edit/covid-case/" + this.props.obj.id } className="btn btn-primary mr-3">Edit</Link>
                     <button onClick={ this.delete } className="btn btn-danger">Delete</button>
                 </td>
             </tr>
@@ -54,4 +64,4 @@ class RecordsList extends Component {
     }
 }
 
-export default RecordsList;
+export default RecordsListCovid;
