@@ -27,7 +27,7 @@ export default function Routes() {
         <Route exact path='/view/brgy/:id' component={ ViewBrgy } />
         <Route exact path='/add/covid-case' component={ AddCovid } />
         <Route exact path='/add/pui' component={ AddPui } />
-        <Route exact path='/add/pui' component={ AddPum } />
+        <Route exact path='/add/pum' component={ AddPum } />
         <Route exact path='/add/user' component={ AddUser } />
         <Route exact path='/edit/covid-case/:id' component={ EditCovid } />
     </Switch>
