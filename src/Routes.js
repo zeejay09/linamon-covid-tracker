@@ -2,9 +2,8 @@ import React from "react";
 import { Route, Switch } from "react-router-dom";
 
 // My imports
-import Insert from './components/Insert';
-import Edit from './components/Edit';
-import View from './components/View';
+import EditUser from './components/Update/User';
+import View from './components/ViewUsers/View';
 import Home from './containers/Home';
 import About from './containers/About';
 import Contact from './containers/Contact';
@@ -22,8 +21,7 @@ export default function Routes() {
         <Route exact path='/about' component={ About } />
         <Route exact path='/contact' component={ Contact } />
         <Route exact path='/user' component={ LoginForm } />
-        <Route exact path='/insert' component={ Insert } />
-        <Route exact path='/edit/user/:id' component={ Edit } />
+        <Route exact path='/edit/user/:id' component={ EditUser } />
         <Route exact path='/view/users' component={ View } />
         <Route exact path='/view/brgy/:id' component={ ViewBrgy } />
         <Route exact path='/add/covid-case' component={ AddCovid } />
