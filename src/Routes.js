@@ -23,8 +23,8 @@ export default function Routes() {
         <Route exact path='/contact' component={ Contact } />
         <Route exact path='/user' component={ LoginForm } />
         <Route exact path='/insert' component={ Insert } />
-        <Route exact path='/edit/:id' component={ Edit } />
-        <Route exact path='/view' component={ View } />
+        <Route exact path='/edit/user/:id' component={ Edit } />
+        <Route exact path='/view/users' component={ View } />
         <Route exact path='/view/brgy/:id' component={ ViewBrgy } />
         <Route exact path='/add/covid-case' component={ AddCovid } />
         <Route exact path='/add/pui' component={ AddPui } />
