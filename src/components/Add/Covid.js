@@ -13,6 +13,7 @@ export default class Covid extends Component {
 
         this.state = {
             barangay_id: '',
+            current_brgy_id: localStorage.getItem('brgy_id') ? localStorage.getItem('brgy_id') : false,
             redirect: false,
             isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
         }
@@ -31,7 +32,6 @@ export default class Covid extends Component {
         } else if (this.state.redirect) {
             return <Redirect to={{ pathname: "/view/brgy/" + localStorage.getItem('brgy_id') }} />;
         }
-
         return (
         <Formik
             initialValues={{ 
@@ -122,7 +122,7 @@ export default class Covid extends Component {
                             <div className="input-feedback">{errors.alias}</div>
                         )}
                         <label htmlFor="covid-case">Barangay</label>
-                        <select value={this.state.value} onChange={this.handleChange}>
+                        <select value={this.state.current_brgy_id} onChange={this.handleChange}>
                             <option value="0">Select Barangay</option>
                             <option value="1">Busque</option>
                             <option value="2">Larapan</option>
