@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+import { Link } from 'react-router-dom';
 import RecordsList from './RecordsList';
 
 export default class View extends Component {
@@ -11,8 +12,9 @@ export default class View extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost/linamon-covid-tracker-api/view.php').then(response => {
-            this.setState({ users: response.data });
+        const authToken = sessionStorage.getItem('authToken');
+        axios.get('/users', {headers:{Authorization: authToken}}).then(response => {
+            this.setState({ users: response.data.data });
         }).catch(function (error) {
             console.log(error);
         })
@@ -26,8 +28,9 @@ export default class View extends Component {
 
     render() {
         return (
-            <div>
+            <div className="mt-3 p-3">
                 <h3 align="center">Users List</h3>
+                <Link to={ "/add/covid-case" } className="btn btn-primary">Add User</Link>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
