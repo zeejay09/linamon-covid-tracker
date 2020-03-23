@@ -17,9 +17,9 @@ export default class About extends Component {
                     <p className="justify-content">The information from this website is directly coming from the authorized personnel of the Local Government Unit (LGU) of Linamon. The information presented may not be up-to-date from time to time because it is not automatically getting data, the data is manually inputted by an authorized user from the LGU Linamon.</p>
 
                     <div className="linamon-logo-wrapper">
-                        <logo className="linamon-logo">
+                        <div className="linamon-logo">
                             <img src="/linamon-logo.png" alt="Municipality of Linamon" />
-                        </logo>
+                        </div>
                     </div>
                 </div>
             </div>
