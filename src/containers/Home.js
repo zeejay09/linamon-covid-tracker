@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import './Home.css';
 import Cards from "../components/Home/Cards";
+import './Home.css';
 
-class InfoBar extends Component {
+class Home extends Component {
     
     render() {
         return (
             <div className="infobar">
                 <div className="infobar-info">
                     <h2 className="infobar-title-wrapper"><span className="infobar-title">Linamon COVID-19 Tracker</span></h2>
-            </div>
+                </div>
 
                 <Cards />
-                
+
             </div>
         );
     }
 }
 
-export default InfoBar
+export default Home
