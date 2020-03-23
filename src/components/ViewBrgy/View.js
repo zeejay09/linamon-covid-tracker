@@ -136,7 +136,7 @@ export default class View extends Component {
                 <div className="pum-table">
                     <div id="title-wrapper" className="mt-5">
                         <h4 align="center">Persons Under Monitoring (PUM)</h4>
-                        <Link to={ "/" } className="btn btn-primary">Add PUM</Link>
+                        <Link to={ "/add/pum" } className="btn btn-primary">Add PUM</Link>
                     </div>
                     <table className="table table-striped" style={{ marginTop: 20 }}>
                         <thead>
