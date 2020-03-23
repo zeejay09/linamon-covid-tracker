@@ -8,7 +8,15 @@ import './NavigationBar.css';
 
 class NavigationBar extends Component {
 
-    onSubmit = (e) => {
+    constructor(props) {
+        super(props);
+    
+        this.state = {
+            isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
+        };
+    }
+
+    handleLogout = (e) => {
         e.preventDefault();
     
         const authToken = sessionStorage.getItem('authToken');
@@ -21,7 +29,7 @@ class NavigationBar extends Component {
         );
     }
 
-    render() {    
+    render() {
         return (
             <header>
                 <div className="container-fluid">
@@ -30,7 +38,7 @@ class NavigationBar extends Component {
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                             <ul className="navbar-nav">
-                                {this.props.isLoggedIn ?
+                                {this.state.isLoggedIn ?
                                 <React.Fragment>
                                     <li className="nav-item">
                                         <NavLink href='/about' className="nav-link">About</NavLink>
@@ -38,9 +46,9 @@ class NavigationBar extends Component {
                                     <li className="nav-item">
                                         <NavLink href='/contact' className="nav-link">Contact</NavLink>
                                     </li>
-                                    <form onSubmit={ this.onSubmit }>
+                                    <form onSubmit={ this.handleLogout }>
                                         <li className="nav-item">
-                                        <button type="submit" className="nav-link bg-transparent">Logout</button>
+                                            <button type="submit" className="nav-link bg-transparent">Logout</button>
                                         </li>
                                     </form>
                                 </React.Fragment>
