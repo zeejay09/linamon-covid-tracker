@@ -13,6 +13,12 @@ class Home extends Component {
 
                 <Cards />
 
+                <div className="linamon-logo-wrapper mt-5">
+                    <div className="linamon-logo">
+                        <img src="/linamon-logo.png" alt="Municipality of Linamon" />
+                    </div>
+                </div>
+
             </div>
         );
     }
