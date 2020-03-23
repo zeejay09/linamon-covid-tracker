@@ -13,6 +13,7 @@ class NavigationBar extends Component {
     
         this.state = {
             isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
+            userRole: sessionStorage.getItem('userRole') ? parseInt(sessionStorage.getItem('userRole')) : false,
         };
     }
 
@@ -40,20 +41,38 @@ class NavigationBar extends Component {
                             <ul className="navbar-nav">
                                 {this.state.isLoggedIn ?
                                 <React.Fragment>
-                                    <li className="nav-item">
-                                        <NavLink href='/view/users' className="nav-link">Users</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink href='/about' className="nav-link">About</NavLink>
-                                    </li>
-                                    <li className="nav-item">
-                                        <NavLink href='/contact' className="nav-link">Contact</NavLink>
-                                    </li>
-                                    <form onSubmit={ this.handleLogout }>
+                                    {this.state.userRole === 1 ?
+                                    <React.Fragment>
                                         <li className="nav-item">
-                                            <button type="submit" className="nav-link bg-transparent">Logout</button>
+                                            <NavLink href='/view/users' className="nav-link">Users</NavLink>
                                         </li>
-                                    </form>
+                                        <li className="nav-item">
+                                            <NavLink href='/about' className="nav-link">About</NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink href='/contact' className="nav-link">Contact</NavLink>
+                                        </li>
+                                        <form onSubmit={ this.handleLogout }>
+                                            <li className="nav-item">
+                                                <button type="submit" className="nav-link bg-transparent">Logout</button>
+                                            </li>
+                                        </form>
+                                    </React.Fragment>
+                                    :
+                                    <React.Fragment>
+                                        <li className="nav-item">
+                                            <NavLink href='/about' className="nav-link">About</NavLink>
+                                        </li>
+                                        <li className="nav-item">
+                                            <NavLink href='/contact' className="nav-link">Contact</NavLink>
+                                        </li>
+                                        <form onSubmit={ this.handleLogout }>
+                                            <li className="nav-item">
+                                                <button type="submit" className="nav-link bg-transparent">Logout</button>
+                                            </li>
+                                        </form>
+                                    </React.Fragment>
+                                    }
                                 </React.Fragment>
                                 :
                                 <React.Fragment>
