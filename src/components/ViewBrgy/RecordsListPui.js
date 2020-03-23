@@ -14,7 +14,16 @@ class RecordsListPui extends Component {
     }
 
     delete = () => {
-        axios.get('http://localhost/linamon-covid-tracker-api/delete.php?id=' + this.props.obj.user_id).then(
+
+        const authToken = sessionStorage.getItem('authToken');
+
+        let data = {
+            pui_id: [
+                this.props.obj.id
+            ]
+        }
+
+        axios.delete('/delete/puis', {data,headers:{Authorization: authToken}}).then(
             console.log('Deleted'),
             this.setState({
                 redirect: true
@@ -28,7 +37,7 @@ class RecordsListPui extends Component {
         const { redirect } = this.state;
 
         if (redirect) {
-            return <Redirect to='/view' />;
+            return <Redirect to={{ pathname: "/view/brgy/" + localStorage.getItem('brgy_id') }} />;
         }
 
         return (
@@ -46,7 +55,7 @@ class RecordsListPui extends Component {
                     { this.props.obj.alias }
                 </td>
                 <td>
-                    <Link to={ "/edit/" + this.props.obj.id } className="btn btn-primary mr-3">Edit</Link>
+                    <Link to={ "/edit/pui/" + this.props.obj.id } className="btn btn-primary mr-3">Edit</Link>
                     <button onClick={ this.delete } className="btn btn-danger">Delete</button>
                 </td>
             </tr>
