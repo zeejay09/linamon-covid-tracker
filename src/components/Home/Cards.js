@@ -12,9 +12,9 @@ class Cards extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://la-covid-api.jeexpoy.com/v1/barangays').then(response => {
+        axios.get('/barangays').then(response => {
             this.setState({ brgy: response.data.data });
-            console.log(response.data.data);
+            // console.log(response.data.data);
         }).catch(function (error) {
             console.log(error);
         })
