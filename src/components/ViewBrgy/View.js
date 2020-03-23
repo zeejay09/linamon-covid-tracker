@@ -78,6 +78,10 @@ export default class View extends Component {
     }
 
     render() {
+
+        //Store to localStorage
+        localStorage.setItem('brgy_id', this.state.brgy['id'])
+
         if (!this.state.isLoggedIn) {
             return <Redirect to={{ pathname: "/" }} />;
         }
@@ -88,7 +92,7 @@ export default class View extends Component {
                     <h3 align="center">Barangay { this.state.brgy['brgy_name'] }</h3>
                     <div id="title-wrapper" className="mt-5">
                         <h4 align="center">Confirmed COVID-19 Cases (COVID-19)</h4>
-                        <Link to={ "/add/covid-case" } className="btn btn-primary">Add</Link>
+                        <Link to={ "/add/covid-case" } className="btn btn-primary">Add COVID Case</Link>
                     </div>
                     <table className="table table-striped" style={{ marginTop: 20 }}>
                         <thead>
@@ -109,7 +113,7 @@ export default class View extends Component {
                 <div className="pui-table">
                     <div id="title-wrapper" className="mt-5">
                         <h4 align="center">Persons Under Investigation (PUI)</h4>
-                        <Link to={ "/" } className="btn btn-primary">Add</Link>
+                        <Link to={ "/add/pui" } className="btn btn-primary">Add PUI</Link>
                     </div>
                     <table className="table table-striped" style={{ marginTop: 20 }}>
                         <thead>
@@ -130,7 +134,7 @@ export default class View extends Component {
                 <div className="pum-table">
                     <div id="title-wrapper" className="mt-5">
                         <h4 align="center">Persons Under Monitoring (PUM)</h4>
-                        <Link to={ "/" } className="btn btn-primary">Add</Link>
+                        <Link to={ "/" } className="btn btn-primary">Add PUM</Link>
                     </div>
                     <table className="table table-striped" style={{ marginTop: 20 }}>
                         <thead>
