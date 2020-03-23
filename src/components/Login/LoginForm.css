@@ -2,10 +2,11 @@ h1 {
     text-align: center;
   }
   
-  form {
+  form#loginForm {
     max-width: 500px;
     width: 100%;
     margin: 0 auto;
+    padding: 20px;
   }
   
   label,

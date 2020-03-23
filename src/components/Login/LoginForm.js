@@ -62,7 +62,7 @@ export default class LoginForm extends Component {
                 handleSubmit
             } = props;
             return (
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} className="loginForm">
                     <label htmlFor="email">Email</label>
                     <input
                         name="email"
