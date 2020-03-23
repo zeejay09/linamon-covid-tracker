@@ -10,15 +10,40 @@ class InfoCard extends Component {
         this.state = { 
             pui: 0,
             pum: 0,
+            covid: 0,
             isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
         };
     }
 
     componentDidMount() {
         axios.get('/puis/barangays/' + this.props.obj.id).then(response => {
-            this.setState({ brgy: response.data.data });
-            console.log(response.data.data);
+            this.setState({ 
+                pui: response.data.data.length 
+            });
+            console.log("pui: " + response.data.data.length);
         }).catch(function (error) {
+            console.log(error);
+        })
+
+        axios.get('/pums/barangays/' + this.props.obj.id).then(
+            response => {
+                this.setState({ 
+                    pum: response.data.data.length 
+                });
+                console.log("pum: " + response.data.data.length);
+            }
+        ).catch( function (error) {
+            console.log(error);
+        })
+
+        axios.get('/covid-cases/barangays/' + this.props.obj.id).then(
+            response => {
+                this.setState({ 
+                    covid: response.data.data.length 
+                });
+                console.log("covid: " + response.data.data.length);
+            }
+        ).catch( function (error) {
             console.log(error);
         })
     }
@@ -41,8 +66,10 @@ class InfoCard extends Component {
                 }
                 <Card.Body>
                     <Card.Text>
-                        <span className="float-left">PUI: { this.state.pui }</span><span className="float-right">PUM: { this.state.pum }</span>
+                        <span className="float-left">PUI: { this.state.pui }</span>
+                        <span className="float-right">PUM: { this.state.pum }</span>
                     </Card.Text>
+                    <div className="text-center"><span>COVID: { this.state.covid }</span></div>
                 </Card.Body>
             </Card>
         )
