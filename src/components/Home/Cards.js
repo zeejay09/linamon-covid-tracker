@@ -1,45 +1,36 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import CardDeck from 'react-bootstrap/CardDeck';
-import Card from 'react-bootstrap/Card';
 import './Cards.css';
+import InfoCard from './InfoCard';
 
 class Cards extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = { brgy: [] };
+    }
+
+    componentDidMount() {
+        axios.get('http://la-covid-api.jeexpoy.com/v1/barangays').then(response => {
+            this.setState({ brgy: response.data.data });
+            console.log(response.data.data);
+        }).catch(function (error) {
+            console.log(error);
+        })
+    }
+
+    infoCardList = () => {
+        return this.state.brgy.map(function (object, i) {
+            return <InfoCard obj={object} key={i} />;
+        })
+    }
     
     render() {
         return (
             <CardDeck>
-                <Card>
-                    <Card.Header>Header</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This content is a little bit longer.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card>
-                    <Card.Header>Header</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This card has supporting text below as a natural lead-in to additional
-                            content.{' asdasd '}
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                <Card>
-                    <Card.Header>Header</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Card title</Card.Title>
-                        <Card.Text>
-                            This is a wider card with supporting text below as a natural lead-in to
-                            additional content. This card has even longer content than the first to
-                            show that equal height action.
-                        </Card.Text>
-                    </Card.Body>
-                </Card>
-                </CardDeck>
+                { this.infoCardList() }
+            </CardDeck>
         );
     }
 }
