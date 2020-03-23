@@ -37,8 +37,11 @@ export default class User extends Component {
             initialValues={{ 
                 first_name: "", 
                 last_name: "", 
-                alias: "", 
+                email: "",
+                department: "",
+                position: '',
                 barangay_id: 0,
+                role: 2,
             }}
             onSubmit={(values) => {
                 const authToken = sessionStorage.getItem('authToken');
@@ -119,6 +122,44 @@ export default class User extends Component {
                     />
                     {errors.alias && touched.alias && (
                         <div className="input-feedback">{errors.alias}</div>
+                    )}
+                    <label htmlFor="covid-case">Email</label>
+                    <input
+                        name="email"
+                        type="text"
+                        placeholder="Enter your email"
+                        value={values.email}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.email && touched.email && "error"}
+                    />
+                    {errors.email && touched.email && (
+                        <div className="input-feedback">{errors.email}</div>
+                    )}
+                    <label htmlFor="covid-case">Department</label>
+                    <input
+                        name="department"
+                        type="text"
+                        placeholder="Enter your department"
+                        value={values.department}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.department && touched.department && "error"}
+                    />
+                    {errors.department && touched.department && (
+                        <div className="input-feedback">{errors.department}</div>
+                    )}<label htmlFor="covid-case">Position</label>
+                    <input
+                        name="position"
+                        type="text"
+                        placeholder="Enter your department"
+                        value={values.position}
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                        className={errors.position && touched.position && "error"}
+                    />
+                    {errors.position && touched.position && (
+                        <div className="input-feedback">{errors.department}</div>
                     )}
                     <label htmlFor="covid-case">Barangay</label>
                     <select value={this.state.value} onChange={this.handleChange}>
