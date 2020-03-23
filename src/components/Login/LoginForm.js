@@ -27,7 +27,7 @@ export default class LoginForm extends Component {
         <Formik
             initialValues={{ email: "", password: "" }}
             onSubmit={(values) => {
-                axios.post('http://la-covid-api.jeexpoy.com/v1/login', values).then(
+                axios.post('/login', values).then(
                     res => {
                         if (res.status === 200) {
                             sessionStorage.setItem('authToken', res.data.success.token);

@@ -4,6 +4,13 @@ import './index.css';
 import App from './App';
 import Footer from "./containers/Footer";
 import * as serviceWorker from './serviceWorker';
+import axios from 'axios';
+
+//Live Server
+// axios.defaults.baseURL = 'http://la-covid-api.jeexpoy.com/v1';
+
+// Dev Server
+axios.defaults.baseURL = 'http://api.covidtracker.com/v1';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 ReactDOM.render(<Footer />, document.getElementById('footer'));
