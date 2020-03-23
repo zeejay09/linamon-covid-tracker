@@ -1,0 +1,49 @@
+.contact {
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-top: 0.25rem solid #00AFAA;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1), 0 4px 6px -2px rgba(0,0,0,0.05);
+    background-color: #fff;
+    padding-bottom: 5rem;
+}
+
+.contact-info {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: 1.25rem;
+}
+
+.contact-title-wrapper {
+    font-size: 1.5rem;
+    line-height: 1.125;
+    font-weight: 700;
+    font-family: FiraGO,'IBM Plex Sans',system-ui,sans-serif;
+    margin-bottom: 1.25rem;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: FiraGO,'IBM Plex Sans',system-ui,sans-serif;
+    margin-right: 0.75rem;
+    font-size: 2.5rem;
+}
+
+.contact-description {
+    font-family: FiraGO, "IBM Plex Sans", system-ui, sans-serif;
+    color: rgb(106, 109, 116);
+    margin-bottom: 1.25rem;
+}
+
+.contact-desc-link:hover {
+    text-decoration: underline;
+}
+
+.contact-desc-link {
+    cursor: pointer;
+    color: rgb(0, 175, 170);
+    transition: all 0.15s ease-out 0s;
+    text-decoration: none;
+    outline: none;
+}
