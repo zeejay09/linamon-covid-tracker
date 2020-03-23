@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './View.css';
-import RecordsList from './RecordsList';
+import RecordsListCovid from './RecordsListCovid';
+import RecordsListPui from './RecordsListPui';
+import RecordsListPum from './RecordsListPum';
 import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom';
 
@@ -61,19 +63,19 @@ export default class View extends Component {
 
     puiList = () => {
         return this.state.pui.map(function (object, i) {
-            return <RecordsList obj={object} key={i} />;
+            return <RecordsListPui obj={object} key={i} />;
         })
     }
 
     pumList = () => {
         return this.state.pum.map(function (object, i) {
-            return <RecordsList obj={object} key={i} />;
+            return <RecordsListPum obj={object} key={i} />;
         })
     }
 
     covidList = () => {
         return this.state.covid.map(function (object, i) {
-            return <RecordsList obj={object} key={i} />;
+            return <RecordsListCovid obj={object} key={i} />;
         })
     }
 
