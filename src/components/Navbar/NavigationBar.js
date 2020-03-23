@@ -21,7 +21,7 @@ class NavigationBar extends Component {
     
         const authToken = sessionStorage.getItem('authToken');
         
-        axios.post('http://la-covid-api.jeexpoy.com/v1/logout', null, {headers:{Authorization: authToken}}).then(
+        axios.post('/logout', null, {headers:{Authorization: authToken}}).then(
             res => {
                 sessionStorage.clear();
                 window.location.reload();
