@@ -11,7 +11,7 @@ export default class LoginForm extends Component {
         super(props);
 
         this.state = {
-            isLoggedIn: false || sessionStorage.getItem('isLoggedIn'),
+            isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
         }
     }
 
