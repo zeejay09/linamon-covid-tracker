@@ -46,7 +46,7 @@ class RecordsList extends Component {
                     { this.props.obj.alias }
                 </td>
                 <td>
-                    <Link to={ "/edit/" + this.props.obj.user_id } className="btn btn-primary mr-3">Edit</Link>
+                    <Link to={ "/edit/" + this.props.obj.id } className="btn btn-primary mr-3">Edit</Link>
                     <button onClick={ this.delete } className="btn btn-danger">Delete</button>
                 </td>
             </tr>
