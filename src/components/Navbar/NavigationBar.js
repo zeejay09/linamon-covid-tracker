@@ -41,6 +41,9 @@ class NavigationBar extends Component {
                                 {this.state.isLoggedIn ?
                                 <React.Fragment>
                                     <li className="nav-item">
+                                        <NavLink href='/view/users' className="nav-link">Users</NavLink>
+                                    </li>
+                                    <li className="nav-item">
                                         <NavLink href='/about' className="nav-link">About</NavLink>
                                     </li>
                                     <li className="nav-item">
