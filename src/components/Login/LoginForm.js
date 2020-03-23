@@ -32,7 +32,8 @@ export default class LoginForm extends Component {
                         if (res.status === 200) {
                             sessionStorage.setItem('authToken', res.data.success.token);
                             sessionStorage.setItem('isLoggedIn', true);
-                            console.log(res.data);
+                            sessionStorage.setItem('userRole', res.data.role.id);
+                            console.log(res.data.role.id);
                             this.setState({
                                 isLoggedIn: true,
                             })
