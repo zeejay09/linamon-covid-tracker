@@ -9,11 +9,9 @@ import Routes from "./Routes";
 
 function App() {
 
-  const isLoggedIn = sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false;
-
   return (
     <Router>
-      <NavigationBar {...{isLoggedIn}} />
+      <NavigationBar />
 
       <Routes />
     </Router>
