@@ -9,3 +9,7 @@ input[type=text], select {
     border-radius: 3px;
     border: 1px solid #777;
 }
+
+.add-form {
+    border-top: 0.25rem solid #00AFAA;
+}
