@@ -34,9 +34,7 @@ export default class LoginForm extends Component {
                             sessionStorage.setItem('isLoggedIn', true);
                             console.log(res.data);
                             this.setState({
-                                email: '',
-                                password: '',
-                                isLoggedIn: true
+                                isLoggedIn: true,
                             })
                         }
                     }
