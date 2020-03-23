@@ -1,0 +1,15 @@
+select {
+    display: block;
+    width: 100%;
+}
+
+input[type=text], select {
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #777;
+}
+
+.add-form {
+    border-top: 0.25rem solid #00AFAA;
+}

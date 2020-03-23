@@ -13,6 +13,7 @@ import AddCovid from "./components/Add/Covid";
 import AddPui from "./components/Add/Pui";
 import AddPum from "./components/Add/Pum";
 import AddUser from "./components/Add/User";
+import EditCovid from "./components/Update/Covid";
 
 export default function Routes() {
   return (
@@ -28,6 +29,7 @@ export default function Routes() {
         <Route exact path='/add/pui' component={ AddPui } />
         <Route exact path='/add/pui' component={ AddPum } />
         <Route exact path='/add/user' component={ AddUser } />
+        <Route exact path='/edit/covid-case/:id' component={ EditCovid } />
     </Switch>
   );
 }
