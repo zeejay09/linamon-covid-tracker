@@ -63,6 +63,7 @@ export default class LoginForm extends Component {
             } = props;
             return (
                 <form onSubmit={handleSubmit} className="loginForm">
+                    <h3 align="center">Login</h3>
                     <label htmlFor="email">Email</label>
                     <input
                         name="email"
