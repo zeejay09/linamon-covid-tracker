@@ -14,6 +14,8 @@ import AddPui from "./components/Add/Pui";
 import AddPum from "./components/Add/Pum";
 import AddUser from "./components/Add/User";
 import EditCovid from "./components/Update/Covid";
+import EditPui from "./components/Update/Pui";
+import EditPum from "./components/Update/Pum";
 
 export default function Routes() {
   return (
@@ -30,6 +32,8 @@ export default function Routes() {
         <Route exact path='/add/pum' component={ AddPum } />
         <Route exact path='/add/user' component={ AddUser } />
         <Route exact path='/edit/covid-case/:id' component={ EditCovid } />
+        <Route exact path='/edit/pui/:id' component={ EditPui } />
+        <Route exact path='/edit/pum/:id' component={ EditPum } />
     </Switch>
   );
 }
