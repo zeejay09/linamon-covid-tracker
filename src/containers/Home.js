@@ -8,7 +8,7 @@ class Home extends Component {
         return (
             <div className="infobar">
                 <div className="infobar-info">
-                    <h2 className="infobar-title-wrapper"><span className="infobar-title">Linamon COVID-19 Tracker</span></h2>
+                    <h1 className="infobar-title-wrapper"><span className="infobar-title">Linamon COVID-19 Tracker</span></h1>
                 </div>
 
                 <Cards />
