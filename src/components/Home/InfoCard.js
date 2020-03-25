@@ -65,11 +65,11 @@ class InfoCard extends Component {
                     </>
                 }
                 <Card.Body align="center">
-                    <Card.Text>
+                    <div className="card-text">
                         <h3>PUI: { this.state.pui }</h3>
                         <h3>PUM: { this.state.pum }</h3>
                         <h3>COVID: { this.state.covid }</h3>
-                    </Card.Text>
+                    </div>
                 </Card.Body>
             </Card>
         )
