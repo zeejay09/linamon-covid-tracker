@@ -7,7 +7,7 @@ import * as serviceWorker from './serviceWorker';
 import axios from 'axios';
 
 //Live Server 1 on 1
-axios.defaults.baseURL = 'https://la-covid-api.jeexpoy.com/v1';
+axios.defaults.baseURL = 'http://la-covid-api.jeexpoy.com/v1';
 
 // Live Server Heroku
 // axios.defaults.baseURL = 'https://la-covid-api.herokuapp.com/';
