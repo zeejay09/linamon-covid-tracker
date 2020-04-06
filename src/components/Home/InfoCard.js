@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Card from 'react-bootstrap/Card';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './InfoCard.css';
 
 class InfoCard extends Component {
 
@@ -55,18 +56,18 @@ class InfoCard extends Component {
                 {this.state.isLoggedIn ?
                     <>
                         <Card.Header>
-                            <h3>{ this.props.obj.brgy_name }</h3>
+                            <span className="barangay-name-header">{ this.props.obj.brgy_name }</span>
                             <Link to={ "/view/brgy/" + this.props.obj.id } className="btn btn-primary">View</Link>
                         </Card.Header>
                     </>
                 :
                     <>
-                        <Card.Header><h3>{ this.props.obj.brgy_name }</h3></Card.Header>
+                        <Card.Header><span className="barangay-name-header">{ this.props.obj.brgy_name }</span></Card.Header>
                     </>
                 }
                 <Card.Body>
                     <div className="card-text">
-                        <h3>Cases: { this.state.covid }</h3>
+                        <span className="barangay-name-header">Cases: { this.state.covid }</span>
                         <h6>PUI: { this.state.pui }</h6>
                         <h6>PUM: { this.state.pum }</h6>
                     </div>
