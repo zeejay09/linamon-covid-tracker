@@ -9,20 +9,14 @@ export default class Covid extends Component {
 
     constructor(props) {
         super(props);
-        this.handleChange = this.handleChange.bind(this);
 
         this.state = {
-            barangay_id: '',
+            barangay_id: localStorage.getItem('brgy_id') ? localStorage.getItem('brgy_id') : 0,
             current_brgy_id: localStorage.getItem('brgy_id') ? localStorage.getItem('brgy_id') : false,
             redirect: false,
             isLoggedIn: sessionStorage.getItem('isLoggedIn') ? sessionStorage.getItem('isLoggedIn') : false,
         }
     }
-
-    handleChange(event) {
-        this.setState({barangay_id: event.target.value});
-    }
-
 
     render() {
 
@@ -121,7 +115,7 @@ export default class Covid extends Component {
                         {errors.alias && touched.alias && (
                             <div className="input-feedback">{errors.alias}</div>
                         )}
-                        <label htmlFor="covid-case">Barangay</label>
+                        {/* <label htmlFor="covid-case">Barangay</label>
                         <select value={this.state.current_brgy_id} onChange={this.handleChange}>
                             <option value="0">Select Barangay</option>
                             <option value="1">Busque</option>
@@ -135,7 +129,7 @@ export default class Covid extends Component {
                         </select>
                         {errors.barangay_id && touched.barangay_id && (
                             <div className="input-feedback">{errors.barangay_id}</div>
-                        )}
+                        )} */}
                         <button type="submit" disabled={isSubmitting}>
                             Submit
                         </button>
