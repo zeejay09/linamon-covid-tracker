@@ -54,21 +54,21 @@ class InfoCard extends Component {
             <Card>
                 {this.state.isLoggedIn ?
                     <>
-                        <Card.Header className="text-center">
+                        <Card.Header>
                             <h2>{ this.props.obj.brgy_name }</h2>
                             <Link to={ "/view/brgy/" + this.props.obj.id } className="btn btn-primary">View</Link>
                         </Card.Header>
                     </>
                 :
                     <>
-                        <Card.Header className="text-center"><h2>{ this.props.obj.brgy_name }</h2></Card.Header>
+                        <Card.Header><h2>{ this.props.obj.brgy_name }</h2></Card.Header>
                     </>
                 }
-                <Card.Body align="center">
+                <Card.Body>
                     <div className="card-text">
-                        <h3>PUI: { this.state.pui }</h3>
-                        <h3>PUM: { this.state.pum }</h3>
-                        <h3>COVID: { this.state.covid }</h3>
+                        <h3>Cases: { this.state.covid }</h3>
+                        <h6>PUI: { this.state.pui }</h6>
+                        <h6>PUM: { this.state.pum }</h6>
                     </div>
                 </Card.Body>
             </Card>
