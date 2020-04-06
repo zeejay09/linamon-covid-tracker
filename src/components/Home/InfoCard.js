@@ -55,13 +55,13 @@ class InfoCard extends Component {
                 {this.state.isLoggedIn ?
                     <>
                         <Card.Header>
-                            <h2>{ this.props.obj.brgy_name }</h2>
+                            <h3>{ this.props.obj.brgy_name }</h3>
                             <Link to={ "/view/brgy/" + this.props.obj.id } className="btn btn-primary">View</Link>
                         </Card.Header>
                     </>
                 :
                     <>
-                        <Card.Header><h2>{ this.props.obj.brgy_name }</h2></Card.Header>
+                        <Card.Header><h3>{ this.props.obj.brgy_name }</h3></Card.Header>
                     </>
                 }
                 <Card.Body>
