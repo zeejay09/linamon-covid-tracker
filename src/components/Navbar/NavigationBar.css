@@ -17,3 +17,11 @@ button.bg-transparent {
         width: 100%;
     }
 }
+
+.lgu-linamon-logo {
+    width: 35px;
+}
+
+.lgu-linamon-logo-wrapper {
+    padding: 0px !important;
+}

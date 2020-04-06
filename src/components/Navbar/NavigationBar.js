@@ -35,7 +35,7 @@ class NavigationBar extends Component {
             <header>
                 <div className="container-fluid">
                     <Navbar bg="light" expand="lg">
-                        <NavLink href={'/'} className="navbar-brand">Municipality of Linamon</NavLink>
+                        <NavLink href={'/'} className="navbar-brand lgu-linamon-logo-wrapper"><img src="/linamon-logo.png" alt="Municipality of Linamon" className="lgu-linamon-logo"/></NavLink>
                         <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
                             <ul className="navbar-nav">
